@@ -1,0 +1,21 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: component-sample
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: component-sample
+    app.kubernetes.io/part-of: application-sample
+  name: component-sample8fvg
+spec:
+  host: route111
+  path: /hello
+  port:
+    targetPort: 1111
+  to:
+    kind: Service
+    name: component-sample
+    weight: null
+status: {}
