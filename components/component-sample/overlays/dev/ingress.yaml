@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: component-sample
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: component-sample
+    app.kubernetes.io/part-of: application-sample
+  name: component-sample
+spec:
+  rules:
+  - host: component-sample-maysun4.192.168.64.29.nip.io
+    http:
+      paths:
+      - backend:
+          service:
+            name: component-sample
+            port:
+              number: 1111
+        path: /hello
+        pathType: ImplementationSpecific
+status:
+  loadBalancer: {}
